@@ -1,0 +1,19 @@
+# Core
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.10.4
+mangum==0.19.0
+
+# Data providers
+yfinance==0.2.51
+requests==2.32.3
+
+# Optional (scientific)
+numpy==2.2.1
+pandas==2.2.3
+
+# Config files
+PyYAML==6.0.2
+
+# Dev / test
+pytest==8.3.4
