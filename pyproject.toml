@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "trading-ai-agents"
+version = "1.0.0"
+description = "Production-grade multi-agent trading system"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Ali Raza", email = "raza077coder@gmail.com" }]
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.34",
+    "pydantic>=2.10",
+    "requests>=2.32",
+    "yfinance>=0.2.51",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3", "pandas>=2.2", "numpy>=2.2", "PyYAML>=6.0.2"]
+
+[project.scripts]
+trading-agents = "trading_agents.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["trading_agents*"]
