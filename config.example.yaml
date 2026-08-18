@@ -1,0 +1,34 @@
+# Trading AI Agents — default configuration
+# Copy to config.yaml and adjust as needed.
+
+agent:
+  name: trading-suite
+  log_level: INFO
+  timeout_seconds: 30
+  cache_ttl_seconds: 300
+
+data:
+  provider: yfinance        # yfinance | alpha_vantage | synthetic
+  default_period: 1y
+  default_interval: 1d
+  retries: 3
+  backoff_factor: 0.5
+
+risk:
+  max_position_pct: 0.10
+  max_portfolio_risk_pct: 0.02
+  default_stop_loss_pct: 0.05
+  default_take_profit_pct: 0.10
+  atr_multiplier_stop: 2.0
+  atr_multiplier_target: 3.0
+
+sentiment:
+  lookback_days: 7
+  use_llm: false
+
+backtest:
+  initial_capital: 100000
+  commission_pct: 0.001
+  slippage_pct: 0.0005
+  benchmark: ^GSPC
+  risk_free_rate: 0.04
